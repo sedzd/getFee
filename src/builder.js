@@ -30,10 +30,12 @@ module.exports.builder = (() => {
           tpvTier,
           fee: tmp.tiers[tpvTier]["fee"] * amount,
           ...rest,
-          ...tmp["omit_type"].reduce((acc, curr) => {
-            acc[curr] = null;
-            return acc;
-          }, {}),
+          ...(Array.isArray(tmp["omit_type"]) &&
+            tmp["omit_type"].length &&
+            tmp["omit_type"].reduce((acc, curr) => {
+              acc[curr] = null;
+              return acc;
+            }, {})),
         }
       : {
           ...rest,
