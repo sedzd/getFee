@@ -1,0 +1,1 @@
+ab -T 'application/x-www-form-urlencoded'  -n 1000 -c 100 -p payload.json http://localhost:8080/

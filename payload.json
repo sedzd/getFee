@@ -1,0 +1,9 @@
+{
+  "type": "DIRECT_DEBIT_PAYMENT",
+  "count": 988,
+  "volume": 250000,
+  "channel": "BPO",
+  "currency": "PHP",
+  "country_of_service": "PHILIPPINES",
+  "amount": 1200
+}
