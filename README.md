@@ -32,3 +32,21 @@ curl --location --request POST 'http://localhost:8080/getFee' \
     "totalFee": "143.55 PHP"
 }
 ```
+
+
+## dockerization
+
+### build
+```shell
+make build
+```
+
+### run
+```shell
+make run-dev
+```
+
+### destroy
+```shell
+make destroy
+```
