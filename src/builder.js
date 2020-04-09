@@ -77,7 +77,19 @@ module.exports.builder = (() => {
         ...rest
       }
       : {
-        fee,
+        ...(fee && {fee}),
+        ...rest
+      }
+    )
+  })
+
+  const applyFlatRate = () => ({ FLAT: flat = null, ...rest }) => ({
+    ...(flat
+      ? {
+        fee: flat['fee'],
+        ...rest
+      }
+      : {
         ...rest
       }
     )
@@ -122,6 +134,7 @@ module.exports.builder = (() => {
     applyFlatTier,
     applyPerecentTier,
     applyTaxVat,
+    applyFlatRate,
     applyTaxWithHold,
     getTotalFee
   }

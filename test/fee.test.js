@@ -1,6 +1,7 @@
 const {
   fee_structure_with_tiering_count,
-  fee_structure_with_tpv_withhold
+  fee_structure_with_tpv_withhold,
+  fee_structure_with_flat_rate
 } = require('./constant')
 
 const expected = {
@@ -48,4 +49,19 @@ test('skip tpv tier and use flat/precentage tier', () => {
     "amount": 1200
   }
   expect(getFee(fee_structure_with_tpv_withhold)(req2)).toBe('143.55 PHP')
+})
+
+
+test('flat rate without tiering', () => {
+
+  const req = {
+    "type": "DIRECT_DEBIT_PAYMENT",
+    "count": 988,
+    "volume": 250000,
+    "channel": "BPO",
+    "currency": "PHP",
+    "country_of_service": "PHILIPPINES",
+    "amount": 1200
+  }
+  expect(getFee(fee_structure_with_flat_rate)(req)).toBe('11.76 PHP')
 })

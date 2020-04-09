@@ -124,5 +124,15 @@ module.exports = {
       "type": "TAX_WITHOLDING",
       "fee": 0.02
     }
+  ],
+  fee_structure_with_flat_rate: [
+      {
+        "type": "FLAT",
+        "fee": 10.5
+      },
+      {
+        "type": "TAX_VAT",
+        "fee": 0.12
+      }
   ]
 }

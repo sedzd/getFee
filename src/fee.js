@@ -10,6 +10,7 @@ exports.getFee = feeStructure =>
     builder.getTierByCount(req),
     builder.applyFlatTier(),
     builder.applyPerecentTier(req),
+    builder.applyFlatRate(),
     builder.applyTaxVat(),
     builder.applyTaxWithHold(),
     builder.getTotalFee(req)
