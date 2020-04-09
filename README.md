@@ -63,6 +63,6 @@ make destroy
 ## Load Test with Apache Benchmark
 
 ```shell
-# defualt: 10000 request, 100 concurrently
+# default: 10000 request, 100 concurrently
 sh ab.sh
 ```
