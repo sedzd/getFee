@@ -1,9 +1,8 @@
-const _ = require('lodash')
-const { builder } = require('./builder')
+const _ = require("lodash");
+const { builder } = require("./builder");
 
-
-exports.getFee = feeStructure =>
-  req => _.flow([
+exports.getFee = (feeStructure) => (req) =>
+  _.flow([
     builder.formatFeeStructure,
     builder.getTierByVol(req),
     builder.applyMicropayments(req),
@@ -13,7 +12,5 @@ exports.getFee = feeStructure =>
     builder.applyFlatRate(),
     builder.applyTaxVat(),
     builder.applyTaxWithHold(),
-    builder.getTotalFee(req)
-  ])(feeStructure)
-
-
+    builder.getTotalFee(req),
+  ])(feeStructure);

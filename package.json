@@ -8,10 +8,12 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
   "devDependencies": {
     "jest": "^25.2.7",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "prettier": "2.0.4"
   }
 }
